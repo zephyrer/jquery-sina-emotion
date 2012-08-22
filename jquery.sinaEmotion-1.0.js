@@ -28,7 +28,7 @@
 				url: 'https://api.weibo.com/2/emotions.json?source=' + options.app_id,
 				beforeSend: function(){},
 				error: function(request){
-					console.log('Error: ' + request.status + ' (' + request.statusText + ')');
+					$('#emotions').html('<div>加载失败</div>');
 				},
 				success: function(response){
 					$('#emotions').html('<div style="float:right"><a href="javascript:void(0);" id="prev">&laquo;</a><a href="javascript:void(0);" id="next">&raquo;</a></div><div class="categorys"></div><div class="container"></div><div class="page"></div>');
