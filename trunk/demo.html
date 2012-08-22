@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<title>jQuery新浪表情插件Demo</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" href="jquery.sina-emotion-1.0.css" />
+	<style type="text/css">
+		body{
+			font-size:10pt;
+		}
+	</style>
+</head>
+<body>
+	<textarea class="emotion" cols="80" rows="5"></textarea><br /><a id="face" href="javascript:void(0)">表情</a>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
+	<script type="text/javascript" src="jquery.sina-emotion-1.0.js"></script>
+	<script type="text/javascript">
+	$('#face').sinaEmotion({
+		target: $('.emotion')
+	});
+	</script>
+</body>
+</html>
