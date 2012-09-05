@@ -1,24 +1,26 @@
 (function($){
+	var target;
 	$.fn.sinaEmotion = function(options){
 		var defaults = {
 			target: $(this).parent('form').find('textarea'),
 			app_id: '1362404091'
 		};
 		options = $.extend({}, defaults, options); 
-		var target = options.target;
 		var cat_current;
 		var cat_page;
 		var emotions = new Array();
 		var categorys = new Array();
 		$(this).click(function(event){
 			event.stopPropagation();
+			if(!$('#emotions')[0]){
+				$(this).parent().append('<div id="emotions"></div>');
+			}
+			$('#emotions').css({top: $(this)[0].offsetTop + $(this).height() + 8, left: $(this)[0].offsetLeft});
+			target = options.target;
 			if($('#emotions .categorys')[0]){
-				$('#emotions').css({top: $(this)[0].offsetTop + $(this).height() + 8, left: $(this)[0].offsetLeft});
 				$('#emotions').toggle();
 				return;
 			}
-			$(this).parent().append('<div id="emotions"></div>');
-			$('#emotions').css({top: $(this)[0].offsetTop + $(this).height() + 8, left: $(this)[0].offsetLeft});
 			$('#emotions').html('<div>正在加载，请稍候...</div>');
 			$('#emotions').click(function(event){
 				event.stopPropagation();
