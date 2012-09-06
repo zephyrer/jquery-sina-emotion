@@ -5,7 +5,7 @@
 			target: $(this).parent('form').find('textarea'),
 			app_id: '1362404091'
 		};
-		options = $.extend({}, defaults, options); 
+		options = $.extend({}, defaults, options);
 		var cat_current;
 		var cat_page;
 		var emotions = new Array();
